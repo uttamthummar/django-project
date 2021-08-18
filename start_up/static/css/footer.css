@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    padding:0;
+}
+.main_footer{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color: rgb(252, 244, 244);
+    width: 100%;
+    bottom: 0;
+}
+.footer_1,.footer_2,.footer_3,.footer_4{
+    text-align: left;
+    width: 25%;
+    margin:20px 15px 15px 30px;
+
+}
+.footer_1 > ul,.footer_2 > ul{
+    list-style-type: none;
+    padding: 0;
+    font-size: 15px;
+    margin-top: 15px;
+}
+.footer_1>h2,.footer_2>h2{
+    margin-left: 10px;
+}
+.footer_1>ul>li,.footer_2>ul>li{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.footer_3>p{
+    font-size: 15px;
+}
+.footer_3 >a>img{
+    width: 25px;
+    height:25px;
+    margin-left: 0px;
+}
+.footer_4>input> ::placeholder{
+    margin-left: 5px;
+    font-weight: 500;
+}

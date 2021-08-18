@@ -1,0 +1,81 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/background.jpg') ; 
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.main_head{
+    margin: 0px;
+    padding: 0px;
+}
+.sub1{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    margin: 0px;
+    height:50px;
+}
+.left{
+    width:60%;
+    padding:0px;
+    margin:0 0px 0 20px;
+    border-right: 2px solid white; 
+}
+.c1{   
+    margin-left: 10px ;  
+    color: white;
+}
+.c2, .c3, .c4, .c5{
+    text-align: center;
+    color: white;
+    margin-left: 30px;
+    padding-right: 30px;
+    border-right: 2px solid white; 
+}
+.sub_head2{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+}
+.S2{
+    width: 15%;
+    margin:10px 10px 10px 10px;
+    padding: 8px 0 8px 0;
+    text-align: center;    
+}
+.S1{
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.s1,.s2,.s3,.s4 ,.s5 ,.s6{
+    font-family: sans-serif;
+    font-size: 20px;
+    margin: 0px 10px 0px 5px;
+}
+.S1 > .s1> a{
+    text-decoration: none;
+    color: blue;
+}
+.s2>a,.s3>a,.s4>a,.s5>a,.s6>a{
+    text-decoration: none;
+    color:black;
+}
+.s7{
+    width: 45%;
+}
+.i1 ,.i2 ,.i3{
+    height: 50px;
+    margin: 5px 15px 5px 10px;
+}
+.i1>input{
+    width:40px;
+    height: 40px;
+}
+.i2>img,.i3>img{
+    width:40px;
+    height: 40px;
+}

@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>footer</title>
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+</head>
+<body>
+    <div class="main_footer">
+        <div class="footer_1">
+            <h2>CATAGORIES</h2>
+            <ul>
+                <li>women</li>
+                <li>men</li>
+                <li>shoes</li>
+                <li>children</li>
+            </ul>
+        </div>
+        <div class="footer_2">
+            <h2>HELP</h2>
+            <ul>
+                <li>Track order</li>
+                <li>return</li>
+                <li>shipping</li>
+                <li>FAQs</li>
+            </ul>       
+        </div>
+
+        <div class="footer_3">
+            <h2>GET IN TOUCH</h2>
+            <p>Any questions? Let us know in store at 8th floor,
+            379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879</p>
+            <a href='https://www.facebook.com/' target="_blank">
+                <img src='{% static "img/icons8-facebook.svg"%}' ></a>
+            <a href='https://www.instagram.com/' target="_blank">
+                <img src='{% static "img/instagram.jpeg"%}' ></a>
+        </div>
+
+        <div class="footer_4">
+            <h2>NEWSLETTER</h2>
+            <form >
+                <input type="text" placeholder="search..">
+                <br><br>
+                <button type="search">SUBSCRIBE</button>
+            </form>
+
+        </div>
+    </div>
+    
+</body>
+</html>
