@@ -27,12 +27,20 @@ body{
     margin-left: 10px ;  
     color: white;
 }
+
 .c2, .c3, .c4, .c5{
-    text-align: center;
     color: white;
     margin-left: 30px;
     padding-right: 30px;
     border-right: 2px solid white; 
+}
+.c3>a{
+    text-decoration: none;
+    color: white;
+}
+.c3{
+    padding-top:16px;
+    padding-bottom :16px ;
 }
 .sub_head2{
     display: flex;

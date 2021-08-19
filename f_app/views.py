@@ -11,13 +11,17 @@ def register(request):
         form=UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect ('user')
+            return redirect ('index')
     else:
         form = UserCreationForm()
 
     return render(request,"registration/register.html",{'form':form})
-def home(request):
+
+def dashboard(request):
     return render(request,"dashboard.html")
+
+def home(request):
+    return render(request,"main.html")
 
 def shop(request):
     return render(request,"shop.html")
