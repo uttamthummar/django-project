@@ -1,10 +1,12 @@
 {% extends 'main.html' %}
 
 {% block content %}
-<h1>USER REGISTRATION AND LOGIN</h1>
+
 {% if user.is_authenticated %}
+    <h1>welcomeee ,{{user.username}}</h1>
     <a href="{% url 'logout' %}">logout</a>
     {% else %}
+    <h1>USER REGISTRATION AND LOGIN</h1>
     <a href="{% url 'login_url' %}">login</a>
     <a href="{% url 'register_url' %}">register</a>
 {% endif %}
