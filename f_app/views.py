@@ -6,7 +6,7 @@ def dashboard(request):
     return render(request,"dashboard.html")
 
 def home(request):
-    return render(request,"main.html")
+    return render(request,"partials/main.html")
 
 def shop(request):
     return render(request,"shop.html")

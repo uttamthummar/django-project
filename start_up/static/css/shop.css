@@ -1,0 +1,22 @@
+.shop{
+    display:flex;
+    flex-direction:row;
+    background-color: white;
+}
+.im1,.im2,.im3{
+    margin: auto;
+    height: 300px;
+}
+.im1>img{
+    width: 300px;
+    height: 300px;
+}
+.im2>img{
+    width: 300px;
+    height: 300px;
+}
+.im3>img{
+    width: 300px;
+    height: 300px;
+}
+

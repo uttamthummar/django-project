@@ -1,4 +1,24 @@
-{%extends 'main.html'%}
-{% block content%}
-<h2>shoppig</h2>
-{% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+    <title>shop</title>
+</head>
+<body>    
+    {% include "navbar.html" %}
+    {% block content%}
+    <h2>shopping</h2>
+    <div class="shop">
+        <a class="im1" href="/"><img  src="{% static 'img/img_1.jpeg' %}"></a>
+        <a class="im2" href="/"><img  src="{% static 'img/img_2.jpeg' %}"></a>
+        <a class="im3" href="/"><img  src="{% static 'img/img_3.jpeg' %}"></a>
+    </div>
+    <h2>thank you</h2>
+    {% endblock %}
+    {% include "footer.html" %}
+</body>
+</html>
