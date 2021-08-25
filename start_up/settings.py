@@ -57,8 +57,7 @@ ROOT_URLCONF = 'start_up.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["/home/uttam/project/start_up/templates/HTML",
-                 "/home/uttam/project/start_up/templates"],
+        'DIRS': ["/home/uttam/project/start_up/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

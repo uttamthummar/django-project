@@ -1,3 +1,4 @@
+{% extends 'main.html' %} 
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -5,12 +6,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block styles %}
     <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+    {% endblock %}
     <title>shop</title>
 </head>
-<body>    
-    {% include "navbar.html" %}
-    {% block content%}
+<body>   
+    {% block content %}
     <h2>shopping</h2>
     <div class="shop">
         <a class="im1" href="/"><img  src="{% static 'img/img_1.jpeg' %}"></a>
@@ -19,6 +21,5 @@
     </div>
     <h2>thank you</h2>
     {% endblock %}
-    {% include "footer.html" %}
 </body>
 </html>
