@@ -9,7 +9,8 @@ def home(request):
     return render(request,"main.html")
 
 def shop(request):
-    return render(request,"shop.html")
+    clothes = Clothes.objects.all()
+    return render(request,"shop.html",{'clothes':clothes})
 
 def features(request):
     return render(request,"features.html")
