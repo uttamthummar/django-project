@@ -7,15 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block styles %}
-
-    <title>features</title>
+    <title>product list</title>
     {% endblock %}
 </head>
 <body>
     {% block content %}
-    <a href="/product_edit/">edit list</a>
+    {% for product in product %}
+    {{ product.id }}
+    {{ product.product_name }}
+    {{ product.product_price }}
+    {{ product.description }}
     <br>
-    <a href="/list/">show list</a>
+    {% endfor %}
     {% endblock %}
 </body>
 </html>
