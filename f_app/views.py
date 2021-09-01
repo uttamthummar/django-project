@@ -20,7 +20,6 @@ def product_add(request):
             product.product_price=request.POST.get("product_price") 
             product.description=request.POST.get("description")
             product.save()
-            product = Product.objects.all()
             return redirect(list)
         else:
             return redirect(product_add)
@@ -31,6 +30,15 @@ def product_delete(request,id):
     product=Product.objects.get(id=id).delete()
     return redirect(list)
 
+def product_edit(request,id):
+    product=Product.objects.get(id=id)
+    if request.method =="POST":
+        product.product_name=request.POST.get("product_name")
+        product.product_price=request.POST.get("product_price") 
+        product.description=request.POST.get("description")
+        product.save()
+        return redirect(list)
+    return render(request,"product_edit.html",{"product":product})
 
 def list(request):
     product=Product

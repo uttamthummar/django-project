@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block styles %}
-    <title>FORM</title>
+    <title>edit</title>
     {% endblock %}
 </head>
 <body>
@@ -15,12 +15,12 @@
     <form method="POST" >
         {% csrf_token %}
         <label>product_name</label>
-        <input type="text" name="product_name"><br>
+        <input type="text" name="product_name" value="{{ product.product_name }}"><br>
         <label>product_price</label>
-        <input type="text" name="product_price"><br>
+        <input type="text" name="product_price" value="{{ product.product_price }}"><br>
         <label>description</label>
-        <input type="text" name="description"><br>
-        <button type="submit" value="POST">SUBMIT</button>
+        <input type="text" name="description" value="{{ product.description }}"><br>
+        <button type="submit" value="POST">Update</button>
     </form>
     {% endblock %}
 </body>
