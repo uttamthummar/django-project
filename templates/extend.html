@@ -18,8 +18,8 @@
         {{ product.product_name }}
         {{ product.product_price }}
         {{ product.description }}
-        <a href="/product_extend/{{ product.id }}"><button>extend</button></a>
-
+        <a href="/product_delete/{{ product.id }}"><button>delete</button></a>
+        <a href="/product_edit/{{ product.id }}"><button>product_edit</button></a>
         <br>
         {% endfor %}
     {% endblock %}

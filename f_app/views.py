@@ -26,6 +26,11 @@ def product_add(request):
     else:
         return render(request,"form.html")
 
+def product_extend(request,id):
+    product=Product
+    product = Product.objects.all()
+    return render(request,"extend.html",{"product":product})
+
 def product_delete(request,id):
     product=Product.objects.get(id=id).delete()
     return redirect(list)
