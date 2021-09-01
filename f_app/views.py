@@ -1,5 +1,5 @@
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect, render
+
+from django.shortcuts import get_object_or_404, redirect, render
 from .models import *
 
 def dashboard(request):
@@ -12,9 +12,9 @@ def shop(request):
     clothes = Clothes.objects.all()
     return render(request,"shop.html",{'clothes':clothes})
     
-def product_edit(request):
+def product_add(request):
     if request.method == "POST":
-        if (request.POST.get("product_name") and request.POST.get("product_price"))or request.POST.get("description"):
+        if (request.POST.get("product_name") and request.POST.get("product_price")) or request.POST.get("description"):
             product=Product()
             product.product_name=request.POST.get("product_name")
             product.product_price=request.POST.get("product_price") 
@@ -23,9 +23,14 @@ def product_edit(request):
             product = Product.objects.all()
             return redirect(list)
         else:
-            return redirect(product_edit)
+            return redirect(product_add)
     else:
         return render(request,"form.html")
+
+def product_delete(request,id):
+    product=Product.objects.get(id=id).delete()
+    return redirect(list)
+
 
 def list(request):
     product=Product
