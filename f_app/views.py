@@ -1,5 +1,6 @@
-
-from django.shortcuts import get_object_or_404, redirect, render
+from start_up.settings import LOGIN_REDIRECT_URL
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import  redirect, render
 from .models import *
 
 def dashboard(request):
@@ -11,7 +12,8 @@ def home(request):
 def shop(request):
     clothes = Clothes.objects.all()
     return render(request,"shop.html",{'clothes':clothes})
-    
+
+@login_required(login_url=LOGIN_REDIRECT_URL)
 def product_add(request):
     if request.method == "POST":
         if (request.POST.get("product_name") and request.POST.get("product_price")) or request.POST.get("description"):
@@ -26,14 +28,17 @@ def product_add(request):
     else:
         return render(request,"form.html")
 
+@login_required(login_url=LOGIN_REDIRECT_URL)
 def product_extend(request,id):
     product=Product.objects.get(id=id)
     return render(request,"extend.html",{"product":product})
 
+@login_required(login_url=LOGIN_REDIRECT_URL)
 def product_delete(request,id):
     product=Product.objects.get(id=id).delete()
     return redirect(list)
 
+@login_required(login_url=LOGIN_REDIRECT_URL)
 def product_edit(request,id):
     product=Product.objects.get(id=id)
     if request.method =="POST":
@@ -44,6 +49,7 @@ def product_edit(request,id):
         return redirect(list)
     return render(request,"product_edit.html",{"product":product})
 
+@login_required(login_url=LOGIN_REDIRECT_URL)
 def list(request):
     product=Product()
     product = Product.objects.all().order_by("id")
