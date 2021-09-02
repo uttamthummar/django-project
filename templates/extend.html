@@ -13,15 +13,13 @@
 <body>
     {% block content %}       
     {% csrf_token %}
-    {% for product in product %}
         {{ product.id }}
         {{ product.product_name }}
         {{ product.product_price }}
         {{ product.description }}
         <a href="/product_delete/{{ product.id }}"><button>delete</button></a>
-        <a href="/product_edit/{{ product.id }}"><button>product_edit</button></a>
+        <a href="/product_edit/{{ product.id }}"><button>edit</button></a>
         <br>
-        {% endfor %}
-    {% endblock %}
+ {% endblock %}
 </body>
 </html>

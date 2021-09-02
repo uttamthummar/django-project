@@ -27,8 +27,7 @@ def product_add(request):
         return render(request,"form.html")
 
 def product_extend(request,id):
-    product=Product
-    product = Product.objects.all()
+    product=Product.objects.get(id=id)
     return render(request,"extend.html",{"product":product})
 
 def product_delete(request,id):
@@ -46,8 +45,8 @@ def product_edit(request,id):
     return render(request,"product_edit.html",{"product":product})
 
 def list(request):
-    product=Product
-    product = Product.objects.all()
+    product=Product()
+    product = Product.objects.all().order_by("id")
     return render(request,"list.html",{"product":product})
 
 def features(request):                 
