@@ -1,7 +1,9 @@
+from django.contrib import messages
 from start_up.settings import LOGIN_REDIRECT_URL
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import  redirect, render
 from .models import *
+
 
 def dashboard(request):
     return render(request,"dashboard.html")
@@ -15,15 +17,19 @@ def shop(request):
 
 @login_required(login_url=LOGIN_REDIRECT_URL)
 def product_add(request):
-    if request.method == "POST":
-        if (request.POST.get("product_name") and request.POST.get("product_price")) or request.POST.get("description"):
-            product=Product()
-            product.product_name=request.POST.get("product_name")
-            product.product_price=request.POST.get("product_price") 
-            product.description=request.POST.get("description")
+    if request.method == "POST":  
+        product=Product()
+        product.product_name=request.POST.get("product_name")
+        product.product_price=request.POST.get("product_price")
+        product.description=request.POST.get("description") 
+        if (request.POST.get("product_name") and request.POST.get("product_price")) or request.POST.get("description"):     
+            if(len(request.POST.get("product_name")) < 10):
+                messages.error(request," name length invalid")
+                return render(request,"form.html",{"product":product})
             product.save()
             return redirect(list)
         else:
+            messages.error(request,"error")
             return redirect(product_add)
     else:
         return render(request,"form.html")

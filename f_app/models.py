@@ -15,5 +15,5 @@ class Clothes(models.Model):
 
 class Product(models.Model):
     product_name=models.CharField(max_length=100,null=False)
-    product_price=models.IntegerField(null=False)
+    product_price=models.BigIntegerField(null=False)
     description=models.CharField(max_length=100,null=True)

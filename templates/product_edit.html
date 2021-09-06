@@ -17,9 +17,9 @@
         <label>product_name</label>
         <input type="text" name="product_name" value="{{ product.product_name }}"><br>
         <label>product_price</label>
-        <input type="text" name="product_price" value="{{ product.product_price }}"><br>
+        <input type="number" name="product_price" min="1000" value="{{ product.product_price }}"><br>
         <label>description</label>
-        <input type="text" name="description" value="{{ product.description }}"><br>
+        <input type="text" name="description"  value="{{ product.description }}"><br>
         <button type="submit" value="POST">Update</button>
     </form>
     {% endblock %}
