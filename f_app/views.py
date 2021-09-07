@@ -18,14 +18,12 @@ def shop(request):
 @login_required(login_url=LOGIN_REDIRECT_URL)
 def product_add(request):
     if request.method == "POST":  
-        product=Product()
-        product.product_name=request.POST.get("product_name")
-        product.product_price=request.POST.get("product_price")
-        product.description=request.POST.get("description") 
         if (request.POST.get("product_name") and request.POST.get("product_price")) or request.POST.get("description"):     
-            if(len(request.POST.get("product_name")) < 10):
-                messages.error(request," name length invalid")
-                return render(request,"form.html",{"product":product})
+            product=Product()
+            product.product_name=request.POST.get("product_name")
+            product.product_price=request.POST.get("product_price")
+            product.description=request.POST.get("description") 
+            product.name=request.user
             product.save()
             return redirect(list)
         else:
@@ -58,7 +56,8 @@ def product_edit(request,id):
 @login_required(login_url=LOGIN_REDIRECT_URL)
 def list(request):
     product=Product()
-    product = Product.objects.all().order_by("id")
+    product.name=request.user
+    product = Product.objects.filter(name=product.name).order_by("id")
     return render(request,"list.html",{"product":product})
 
 def features(request):                 
